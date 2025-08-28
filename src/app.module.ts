@@ -6,6 +6,7 @@ import { database } from './shared/config/database-namespaced';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { DatabaseConfig } from './shared/interfaces/database';
 import { ConfigKey } from './shared/enums/config-key';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -22,6 +23,8 @@ import { ConfigKey } from './shared/enums/config-key';
         ) as TypeOrmModuleOptions;
       },
     }),
+    // Modules
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
