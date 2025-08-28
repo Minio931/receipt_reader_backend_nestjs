@@ -5,7 +5,6 @@ export interface DatabaseConfig {
   username: string;
   password: string;
   database: string;
-  entities: string[];
   synchronize: boolean;
   migrations: string[];
   migrationsTableName: string;

@@ -3,7 +3,7 @@ FROM node:20-slim AS base
 WORKDIR /app
 ENV PORT=3000
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates tini \
+    ca-certificates tini procps\
  && rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["/usr/bin/tini","--"]
@@ -11,8 +11,7 @@ ENTRYPOINT ["/usr/bin/tini","--"]
 # ===================== development =====================
 FROM base AS development
 ENV NODE_ENV=development
-COPY package*.json ./
-RUN npm install
+WORKDIR /app
 COPY . .
 CMD ["npm","run","start:dev"]
 
