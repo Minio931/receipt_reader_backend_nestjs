@@ -6,6 +6,7 @@ export interface DatabaseConfig {
   password: string;
   database: string;
   synchronize: boolean;
+  autoLoadEntities: boolean;
   migrations: string[];
   migrationsTableName: string;
 }

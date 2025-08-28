@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { database } from './shared/config/database';
+import { database } from './shared/config/database-namespaced';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { DatabaseConfig } from './shared/interfaces/database';
 import { ConfigKey } from './shared/enums/config-key';
